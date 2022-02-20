@@ -12,7 +12,7 @@ function ModalEdit({tab,setTab,el}) {
     const [textTitre,setTextTitre] = useState(el.title)
     const [textDescription,setTextDescription] = useState(el.description)
     const [textAffiche,setTextAffiche] = useState(el.posterURL)
-    const[rate,setRate]=useState(el.rate)
+    const[rate,setRate]=useState(el.rating)
 
     const handleEdit =(a)=>setTab(tab.map(al=>al.id===a?{...al,title:textTitre,description:textDescription,posterURL:textAffiche,rating:rate}:al))
 return (
@@ -58,7 +58,7 @@ return (
         <Button variant="secondary" onClick={handleClose}>
             Anuler
         </Button>
-        <Button variant="dark"conClick={()=>{handleEdit(el.id)}}>
+        <Button variant="dark"onClick={()=>{handleEdit(el.id)}}>
             Modifier
         </Button>
         </Modal.Footer>
